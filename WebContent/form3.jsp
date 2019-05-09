@@ -19,7 +19,7 @@
 	<br> パスワード:<%=pass%><br>
 	<br>
 
-	<a href="index.jsp">最初に戻る</a>
+	<a href="form.jsp">最初に戻る</a>
 
 </body>
 </html>

@@ -16,7 +16,7 @@
 	ＩＤ:<%=id%><br><br>
 	 パスワード:<%=pass%><br><br>
 
-	<form action="index3.jsp" method="POST">
+	<form action="form3.jsp" method="POST">
 		<input type="hidden" name="id" value="<%=id%>"> 
 		<input type="hidden" name="pass" value="<%=pass%>">
 		<input type="submit" value="次のページへ">
