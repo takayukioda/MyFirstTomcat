@@ -20,9 +20,17 @@
   	<servlet-name>HelloWorld</servlet-name>
   	<servlet-class>jp.co.givery.training.HelloWorld</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MySQLSearch</servlet-name>
+  	<servlet-class>jp.co.givery.training.MySQLSearch</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>HelloWorld</servlet-name>
   	<url-pattern>/servlet/hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MySQLSearch</servlet-name>
+  	<url-pattern>/servlet/mysql-search</url-pattern>
   </servlet-mapping>
 </web-app>
