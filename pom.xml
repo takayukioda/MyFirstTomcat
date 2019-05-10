@@ -31,4 +31,7 @@
   		<version>8.0.16</version>
   	</dependency>
   </dependencies>
+  <properties>
+  	<project.build.sourceEncoding>Windows-31J</project.build.sourceEncoding>
+  </properties>
 </project>
