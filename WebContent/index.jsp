@@ -2,18 +2,27 @@
 
 <html>
 <body>
-
-	<%
-		String mongon = "ＩＤとパスワードを入力してください。";
-	%>
-
-	<%=mongon%><br>
+	<br> 検索条件を入力してください。
+	<br>（何も入力しないと全件抽出します）
+	<br>
 	<br>
 
-	<form action="index2.jsp" method="POST">
-		ＩＤ: <input type="text" name="id"> パスワード: <input type="text" name="pass"> 
-		<br><br>
-		 <input type="submit" value="submit">
+	<form action="/MyFirstTomcat/servlet/mysql-search" method="POST">
+
+		ID: <input type="text" name="id"> 名前: <input type="text"
+			name="name"> 性別：<SELECT NAME="sei">
+			<OPTION VALUE="" selected></OPTION>
+			<OPTION VALUE="男">男</OPTION>
+			<OPTION VALUE="女">女</OPTION>
+		</SELECT> 入社年：<SELECT NAME="nen">
+			<OPTION VALUE="" selected></OPTION>
+			<OPTION VALUE="2002">2002</OPTION>
+			<OPTION VALUE="2003">2003</OPTION>
+			<OPTION VALUE="2004">2004</OPTION>
+			<OPTION VALUE="2005">2005</OPTION>
+			<OPTION VALUE="2006">2006</OPTION>
+		</SELECT> <br>
+		<br> <input type="submit" value="検索">
 	</form>
 
 </body>
