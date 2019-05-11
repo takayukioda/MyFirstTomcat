@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
-<Context path="/MyFirstTomcat" reloadable="true" debug="1">
+<Context path="/MyFirstTomcat" reloadable="true">
 	<Resource
 		name="jdbc/training"
 		auth="Container"
@@ -13,5 +13,6 @@
 		driverClassName="com.mysql.jdbc.Driver"
 		useSSL="false"
 		url="jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC"
+		factory="org.apache.commons.dbcp.BasicDataSourceFactory"
 	/>
 </Context>
