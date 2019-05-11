@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS company_db;
-CREATE USER IF NOT EXISTS theuser@localhost IDENTIFIED WITH mysql_native_password by '1qazXSW@';
+CREATE USER IF NOT EXISTS theuser@localhost IDENTIFIED BY '1qazXSW@';
 GRANT ALL ON company_db.* TO theuser@localhost;
 
 USE company_db;
