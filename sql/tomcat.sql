@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS company_db;
-CREATE USER IF NOT EXISTS theuser@localhost IDENTIFIED BY '1qazXSW@';
+CREATE USER theuser@localhost IDENTIFIED BY '1qazXSW@';
 GRANT ALL ON company_db.* TO theuser@localhost;
 
 USE company_db;
