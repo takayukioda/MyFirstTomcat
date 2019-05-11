@@ -9,9 +9,10 @@ CREATE TABLE IF NOT EXISTS shain_table (
 	address text
 );
 
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (100, 'RŠİ‘¾˜Y',   '’j', 2002, '“Œ‹“s¢“c’J‹æ');
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (101, '—é–ØMm',   '’j', 2003, '‹{éŒ§å‘äs');
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (102, '“¡ˆäD',   '—', 2004, '•Ÿ‰ªŒ§•Ÿ‰ªs');
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (103, '‚‹´‰F²”ü', '—', 2005, '•Ÿ‰ªŒ§•Ÿ‰ªs');
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (104, '²“¡ˆê“ñO', '’j', 2003, '‹{éŒ§å‘äs');
-INSERT INTO shain_table(id, name, sei, nen, address) VALUES (105, '•½—Ñ½“ñ',   '’j', 2002, '“Œ‹“s]“Œ‹æ');
+INSERT INTO shain_table(id,name,sei,nen,address) VALUES
+	('100','R“c‘¾˜Y','’j','2002','“Œ‹“s¢“c’J‹æ'),
+    ('101','—é–Ø‹`M','’j','2003','‹{éŒ§å‘äs'),
+    ('102','²“¡D','—','2004','•Ÿ‰ªŒ§•Ÿ‰ªs'),
+    ('103','‚‹´³”ü','—','2005','•Ÿ‰ªŒ§•Ÿ‰ªs'),
+    ('104','²“¡—²ˆê','’j','2003','‹{éŒ§å‘äs'),
+    ('105','¬—Ñ½“ñ','’j','2002','“Œ‹“s]“Œ‹æ');
