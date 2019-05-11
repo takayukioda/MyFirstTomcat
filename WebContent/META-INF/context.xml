@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
-<Context>
-	<Resource name="jdbc/training" auth="Container"
-		type="javax.sql.DataSource" maxTotal="5" maxIdle="30"
-		maxWaitMillis="10000" username="theuser" password="1qazXSW@"
-		driverClassName="com.mysql.jdbc.Driver" useSSL="false"
-		url="jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC" />
+<Context path="/MyFirstTomcat" reloadable="true" debug="1">
+	<Resource
+		name="jdbc/training"
+		auth="Container"
+		type="javax.sql.DataSource"
+		maxTotal="5"
+		maxIdle="30"
+		maxWaitMillis="10000"
+		username="theuser"
+		password="1qazXSW@"
+		driverClassName="com.mysql.jdbc.Driver"
+		useSSL="false"
+		url="jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC"
+	/>
 </Context>
