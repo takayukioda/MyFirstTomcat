@@ -6,11 +6,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 public class MySQLSearch extends HttpServlet {
 
@@ -18,7 +21,19 @@ public class MySQLSearch extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	DataSource ds;
 
+	// 初期化処理
+	public void init() throws ServletException {
+		try {
+			// 初期コンテキストを取得
+			InitialContext ic = new InitialContext();
+			// ルックアップしてデータソースを取得
+			ds = (DataSource) ic.lookup("java:comp/env/jdbc/training");
+		} catch (Exception e) {
+
+		}
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -44,12 +59,12 @@ public class MySQLSearch extends HttpServlet {
 		
 	
 		try {
-			// JDBC Driver の登録
-			Class.forName("com.mysql.jdbc.Driver");
-			// Connectionの作成
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC&useSSL=false",
-					"theuser", "1qazXSW@");
-
+//			// JDBC Driver の登録
+//			Class.forName("com.mysql.jdbc.Driver");
+//			// Connectionの作成
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/company_db?serverTimezone=UTC&useSSL=false",
+//					"theuser", "1qazXSW@");
+			conn = ds.getConnection();
 			// sql文作成の準備
 			StringBuffer sql = new StringBuffer();
 
@@ -103,10 +118,11 @@ public class MySQLSearch extends HttpServlet {
 			request.getRequestDispatcher("/result.jsp").forward(request, response);
 
 		} finally {
+			// 念のため、finallyでDBとの接続を切断しておく
 			try {
-				// 念のため、finallyでDBとの接続を切断しておく
 				conn.close();
-			} catch (Exception e) {
+			} catch (SQLException e) {
+				throw new ServletException(e);
 			}
 		}
 
