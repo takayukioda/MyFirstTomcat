@@ -7,7 +7,7 @@
 	<br>
 	<br>
 
-	<form action="/MyFirstTomcat/servlet/mysql-search" method="POST">
+	<form action="/MyFirstTomcat/mysql-search" method="POST">
 
 		ID: <input type="text" name="id"> –¼‘O: <input type="text"
 			name="name"> «•ÊF<SELECT NAME="sei">
