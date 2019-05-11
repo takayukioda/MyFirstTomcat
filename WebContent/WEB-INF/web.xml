@@ -31,6 +31,6 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>MySQLSearch</servlet-name>
-  	<url-pattern>/servlet/mysql-search</url-pattern>
+  	<url-pattern>/mysql-search</url-pattern>
   </servlet-mapping>
 </web-app>
