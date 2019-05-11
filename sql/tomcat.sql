@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS company_db;
-USE company_db;
+CREATE USER IF NOT EXISTS theuser@localhost IDENTIFIED WITH mysql_native_password by '1qazXSW@';
+GRANT ALL ON company_db.* TO theuser@localhost;
 
+USE company_db;
 CREATE TABLE IF NOT EXISTS shain_table (
 	id      smallint UNIQUE,
 	name    text,
@@ -8,7 +10,6 @@ CREATE TABLE IF NOT EXISTS shain_table (
 	nen     smallint,
 	address text
 );
-
 INSERT INTO shain_table(id,name,sei,nen,address) VALUES
 	('100','山田太郎','男','2002','東京都世田谷区'),
     ('101','鈴木義信','男','2003','宮城県仙台市'),
