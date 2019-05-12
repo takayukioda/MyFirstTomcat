@@ -19,7 +19,7 @@ cat > /etc/my.cnf.d/encoding.cnf <<EOF
 [mysqld]
 character-set-server=utf8mb4
 
-[mysqld_safe]
+[client]
 default-character-set=cp932
 EOF
 
