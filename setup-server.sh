@@ -53,6 +53,6 @@ systemctl start tomcat
 curl -o /usr/share/tomcat/lib/tomcat-dbcp.jar -sS http://central.maven.org/maven2/org/apache/tomcat/tomcat-dbcp/8.5.40/tomcat-dbcp-8.5.40.jar
 
 cat > /etc/httpd/conf.d/ajp.conf <<EOF
-ProxyPass / ajp://localhost:8009
+ProxyPass / ajp://localhost:8009/
 EOF
 systemctl start httpd
