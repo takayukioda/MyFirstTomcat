@@ -47,6 +47,7 @@ grep -q copyXML /etc/tomcat/server.xml || sed -i -e 's/\(<Host.*appBase="webapps
 
 # Remove `Connector` setting in server.xml where opens port 8080, since we'll use ajp instead
 echo "Comment out unnecessary port open; port 8080"
+systemctl start tomcat
 
 # Install tomcat dbcp to load datasource from context.xml
 curl -o /usr/share/tomcat/lib/tomcat-dbcp.jar -sS http://central.maven.org/maven2/org/apache/tomcat/tomcat-dbcp/8.5.40/tomcat-dbcp-8.5.40.jar
@@ -54,3 +55,4 @@ curl -o /usr/share/tomcat/lib/tomcat-dbcp.jar -sS http://central.maven.org/maven
 cat > /etc/httpd/conf.d/ajp.conf <<EOF
 ProxyPass / ajp://localhost:8009
 EOF
+systemctl start httpd
