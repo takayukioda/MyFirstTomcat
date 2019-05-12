@@ -26,3 +26,5 @@ EOF
 systemctl start mariadb
 # sad, but it's interactive
 mysql_secure_installation
+# for root password, use '1qazXSW@' if its ok
+# because trainee will need to use them to create their own database
