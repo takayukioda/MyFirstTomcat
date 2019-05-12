@@ -43,7 +43,7 @@ mysql_secure_installation
 # After sed:
 #       <Host name="localhost"  appBase="webapps" copyXML="true"
 #             unpackWARs="true" autoDeploy="true">
-sed -i -e 's/\(<Host.*appBase="webapps"\)$/\1 copyXML="true"/' /etc/tomcat/server.xml
+grep -q copyXML /etc/tomcat/server.xml || sed -i -e 's/\(<Host.*appBase="webapps"\)$/\1 copyXML="true"/' /etc/tomcat/server.xml
 
 # Remove `Connector` setting in server.xml where opens port 8080, since we'll use ajp instead
 echo "Comment out unnecessary port open; port 8080"
