@@ -29,7 +29,6 @@ default-character-set=cp932
 EOF
 
 systemctl start mariadb
-
 # sad, but it's interactive
 # for root password, use '1qazXSW@' if its ok
 # because trainee will need to use them to create their own database
@@ -47,12 +46,16 @@ grep -q copyXML /etc/tomcat/server.xml || sed -i -e 's/\(<Host.*appBase="webapps
 
 # Remove `Connector` setting in server.xml where opens port 8080, since we'll use ajp instead
 echo "Comment out unnecessary port open; port 8080"
-systemctl start tomcat
 
 # Install tomcat dbcp to load datasource from context.xml
 curl -o /usr/share/tomcat/lib/tomcat-dbcp.jar -sS http://central.maven.org/maven2/org/apache/tomcat/tomcat-dbcp/8.5.40/tomcat-dbcp-8.5.40.jar
 
+# Connect tomcat and apache
+# reference: <https://weblabo.oscasierra.net/tomcat-mod-proxy-ajp/>
 cat > /etc/httpd/conf.d/ajp.conf <<EOF
 ProxyPass / ajp://localhost:8009/
 EOF
-systemctl start httpd
+
+systemctl restart mariadb
+systemctl restart tomcat
+systemctl restart httpd
