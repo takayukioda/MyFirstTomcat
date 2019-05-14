@@ -18,6 +18,8 @@
 			<td><b>«•Ê</b></td>
 			<td><b>“üŽÐ”N</b></td>
 			<td><b>ZŠ</b></td>
+			<td><b>íœ</b></td>
+			<td><b>•ÏX</b></td>
 		</tr>
 		<%
 			while (rset.next()) {
@@ -28,6 +30,20 @@
 			<td><%=rset.getString(3)%></td>
 			<td><%=rset.getString(4)%></td>
 			<td><%=rset.getString(5)%></td>
+<!---->
+			<td><a href="Edit?&mode=delete&id=<%=rset.getString(1)%>">íœ</a></td>
+			<td>
+				<form action="/MyFirstTomcat/Edit" method="POST">
+					<input type="hidden" name="mode" value="change"> <input
+						type="hidden" name="id" value="<%=rset.getString(1)%>"> <input
+						type="hidden" name="name" value="<%=rset.getString(2)%>">
+					<input type="hidden" name="sei" value="<%=rset.getString(3)%>">
+					<input type="hidden" name="nen" value="<%=rset.getString(4)%>">
+					<input type="hidden" name="address" value="<%=rset.getString(5)%>">
+					<input type="submit" value="•ÏX">
+				</form>
+			</td>
+
 		</tr>
 		<%
 			}
